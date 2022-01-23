@@ -1,0 +1,62 @@
+###
+GET http://localhost:5001/api/user/akuhinnocent2016@gmail.com HTTP/1.1
+
+
+###
+GET http://localhost:5001/api/data/akuhinnocent2016@gmail.com HTTP/1.1
+
+###
+POST http://localhost:5001/api/login
+Content-Type: application/json
+
+{
+    "email": "akuhinnocent2016@gmail.com",
+    "password": "emakpe"
+}
+
+###
+POST http://localhost:5001/api/register
+Content-Type: application/json
+
+{
+    "firstName":"Innocent",
+    "lastName":"Akuh",
+    "phoneNumber":"+2348155332259",
+    "email":"akuhinnocent2016@gmail.com",
+    "password":"emakpe",
+    "confirmPassword":"emakpe"
+}
+
+###
+POST  http://localhost:5001/api/password/reset
+Content-Type: application/json 
+
+{
+"password":"ogugu",
+"confirmPassword":"ogugu",
+"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrdWhpbm5vY2VudDIwMTZAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIrMjM0ODE1NTMzMjI1OSIsImlhdCI6MTY0MjYwNDcxMSwiZXhwIjoxNjQyNzc3NTExfQ.sgD-Awyv2Ws8Fm-a77dRjx7o4riVtqD39mj6LcYkwUA"
+}
+
+
+###
+POST  http://localhost:5001/api/password/forgot
+Content-Type: application/json
+
+{
+"email":"akuhinnocent2016@gmail.com"
+}
+
+
+###
+POST http://localhost:5001/api/order/create
+Content-Type: application/json
+
+{
+    "cakeName":"Bread boils",
+    "cakeSize":"small",
+    "cakeColors":"blue, red",
+    "cakePrize":4000,
+    "deliveryDate":"20-01-2022",
+    "status":"processing",
+    "Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrdWhpbm5vY2VudDIwMTZAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIrMjM0ODE1NTMzMjI1OSIsImlhdCI6MTY0Mjc0Nzg0MiwiZXhwIjoxNjQyOTIwNjQyfQ.1joB9hKY6Dm-P2UaXmvNG29BTnJiED0k03kVUzBLwz0"
+}
