@@ -14,8 +14,9 @@ app.use(bodyParser.json())
 
 app.use('/api', router)
 var port = process.env.port || 5001
-const dbUri = "mongodb://localhost:27017/Cake"
-mongoose.connect(dbUri,{useNewUrlParser:true, useUnifiedTopology:true}, 
+// const dbURI = "mongodb://localhost:27017/Cake"
+var dbURI = 'mongodb+srv://innotex:innotexinnotex@cluster0.6lymd.mongodb.net/buzzroom?retryWrites=true&w=majority';
+mongoose.connect(dbURI,{useNewUrlParser:true, useUnifiedTopology:true}, 
 ).then(result=>{
     console.log('Db Connected')
 }).catch(err=>{
