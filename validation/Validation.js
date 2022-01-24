@@ -1,5 +1,4 @@
 const registerValidation = (req,res)=>{
-    console.log(req)
     const { firstName, lastName, email, phoneNumber, password, confirmPassword} = req
 
     if(!firstName){ 
@@ -37,8 +36,6 @@ const registerValidation = (req,res)=>{
 };
 
 const loginValidation = (object,res)=>{
-    // console.log(object, "Herer")
-
     const {password, email} = object
     if(!email){ res.status(400).send("You omitted last name field"); return false}
 

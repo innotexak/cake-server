@@ -4,7 +4,7 @@ const passHash = require('password-hash')
 const {v4: uuidv4} = require('uuid')
 const {tokenize} = require('../Token')
 
-
+// Functionality Logics 
 const RegistrationLogic = (obj, res)=>{
 const {firstName, lastName, email, phoneNumber, password, confirmPassword} = obj
     User.findOne({email:email}, (err, obj)=>{
@@ -77,7 +77,6 @@ const ForgotPasswordLogic = (Email, res)=>{
 }
 
 const OrderCreationLogic = (obj, res)=>{
-    console.log(obj)
     const {cakeName, cakeSize, cakeColors, cakePrize, status, deliveryDate,  Token} = obj
     User.findOne({Token:Token}, (err, result)=>{
         if(result != null){
@@ -127,7 +126,6 @@ User.findOne({Token:Token}, (err, obj)=>{
     if(obj!=null){
         let userId = obj._id
         OrderedCake.find({userId:userId}).then(result=>{
-            // console.log(result)
             res.status(200).send(result)
         })
         

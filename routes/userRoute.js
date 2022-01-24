@@ -58,7 +58,7 @@ router.get('/data/:token', (req, res, next)=>{
     })
 router.post('/update/status', (req,res)=>{
     if(req.body){
-
+        
     }
 })
 module.exports = router
