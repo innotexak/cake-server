@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Secondary School Portal Designd with mern stack",
   "main": "server.js",
-  "engines": {
-    "node": "16.13.1"
-  },
   "scripts": {
     "start": "nodemon server.js",
     "build": "node server.js",
