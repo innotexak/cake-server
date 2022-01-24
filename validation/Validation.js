@@ -37,8 +37,6 @@ const registerValidation = (req,res)=>{
 
 const loginValidation = (object,res)=>{
     const {password, email} = object
-    if(!email){ res.status(400).send("You omitted last name field"); return false}
-
     if(!email.includes('@')){ res.status(400).send("Invalid email address"); return false }
     if(!password ){ res.status(400).send("password field must not be empty"); return false }
    return true
