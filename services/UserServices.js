@@ -56,6 +56,7 @@ const LoginLogic = (obj, res)=>{
 }
 
 const ResetPasswordLogic =async (obj, res)=>{  
+    // console.log(obj)
     const {Token, password} = obj  
     const hashedPassword = passHash.generate(password)
    const updatedUser= await User.findOneAndUpdate({Token:Token}, {password:hashedPassword})
