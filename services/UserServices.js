@@ -67,6 +67,20 @@ const ResetPasswordLogic =async (obj, res)=>{
    }
 }
 
+
+const ChangePasswordLogic =async (obj, res)=>{  
+    // console.log(obj)
+    const {Token, password} = obj  
+    const hashedPassword = passHash.generate(password)
+   const updatedUser= await User.findOneAndUpdate({Token:Token}, {password:hashedPassword})
+   if(updatedUser){
+       res.status(201).send("Password changed succesfully")
+   }else{
+    res.status(400).send("An error occured, try again!")
+   }
+}
+
+
 const ForgotPasswordLogic = (Email, res)=>{
     User.findOne({email:Email}, (err, obj)=>{
         if(obj ){
@@ -133,4 +147,4 @@ User.findOne({Token:Token}, (err, obj)=>{
     }
 })
 }
-module.exports = {RegistrationLogic, LoginLogic, ResetPasswordLogic, ForgotPasswordLogic, OrderCreationLogic, GetUserServices, GetAllOrderServices} 
+module.exports = {RegistrationLogic, LoginLogic, ResetPasswordLogic, ForgotPasswordLogic, ChangePasswordLogic, OrderCreationLogic, GetUserServices, GetAllOrderServices} 

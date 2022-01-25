@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {registerValidation, loginValidation, ResetPasswordValidation, Ordervalidation} = require("../validation/Validation")
-const {RegistrationLogic, LoginLogic, ForgotPasswordLogic, ResetPasswordLogic, OrderCreationLogic,GetUserServices,GetAllOrderServices} = require('../services/UserServices')
+const {RegistrationLogic, LoginLogic, ForgotPasswordLogic, ResetPasswordLogic, ChangePasswordLogic,OrderCreationLogic,GetUserServices,GetAllOrderServices} = require('../services/UserServices')
 const User = require('../Model/userModel')
 
 // configured routes
@@ -33,6 +33,11 @@ router.post('/password/reset', (req, res)=>{
     }
 })
 
+router.post('/password/change', (req, res)=>{
+    if(ResetPasswordValidation(req.body,res)){
+        ChangePasswordLogic(req.body, res)
+    }
+})
 
 router.post('/order/create', (req, res)=>{
     console.log(req.body)
